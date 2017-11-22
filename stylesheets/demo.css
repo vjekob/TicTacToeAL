@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+
+body {
+    padding: 16px;
+    background-color: rgb(3, 37, 73);
+}
+
+#controlAddIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 450px;
+    height: 450px;
+    border-spacing: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 108, 231)), to(rgb(1, 70, 145)));
+    background-image: -webkit-linear-gradient(top, rgb(0, 108, 231), rgb(1, 70, 145));
+    background-image: -moz-linear-gradient(top, rgb(3, 37, 73), rgb(1, 70, 145));
+    background-image: linear-gradient(to bottom, rgb(0, 108, 231), rgb(1, 70, 145));
+}
+
+tr {
+    height: 33.333%;
+}
+
+td {
+    width: 33.333%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+td {
+    border: 3px solid rgb(109, 177, 255);
+    transition: background-color 0.25s ease;
+}
+
+td:first-child {
+    border-left: 0px none !important;
+}
+
+td:last-child {
+    border-right: 0px none !important;
+}
+
+tr:first-child td {
+    border-top: 0px none !important;
+}
+
+tr:last-child td {
+    border-bottom: 0px none !important;
+}
+
+td:not(.filled):hover {
+    background-color: rgb(55, 142, 242);
+}

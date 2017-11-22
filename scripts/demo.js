@@ -23,7 +23,6 @@ var demo = (function () {
                         index: col
                     };
                     grid[row].$.append(grid[row].cols[col].$);
-                    grid[row].cols[col].$.html("(" + col + ", " + row + ")");
                 };
             };
         }

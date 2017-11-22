@@ -9,4 +9,11 @@ controladdin DemoControl
     
     RequestedHeight = 500;
     RequestedWidth = 500;
+
+    MaximumWidth = 1920;
+    MaximumHeight = 1080;
+    VerticalShrink = false;
+    HorizontalShrink = false;
+    VerticalStretch = true;
+    HorizontalStretch = true;
 }

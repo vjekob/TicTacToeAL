@@ -47,7 +47,7 @@ var demo = (function () {
     };
 
     window.SetName = function(name) {
-        alert(name);
+        alert("Hi, " + name + "! Ready to play some TicTacToe? It's your turn.");
     };
 
     return demo;

@@ -22,4 +22,5 @@ controladdin DemoControl
     HorizontalStretch = true;
 
     procedure SetName(Name: Text);
+    event ControlReady();
 }

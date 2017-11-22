@@ -17,16 +17,24 @@ page 50141 "Demo Page"
 
             usercontrol(Demo; DemoControl)
             {
-            
+                trigger ControlReady();
+                begin
+                    ControlIsReady := true;
+                    UpdateName();
+                end;
             }
         }
     }
     
     var
         Name: Text;
+        ControlIsReady: Boolean;
         
     local procedure UpdateName();
     begin
+        if not ControlIsReady then
+            exit;
+
         CurrPage.Demo.SetName(Name);
     end;
 

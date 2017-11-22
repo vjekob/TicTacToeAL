@@ -22,5 +22,7 @@ controladdin DemoControl
     HorizontalStretch = true;
 
     procedure SetName(Name: Text);
+    procedure MoveAI(Position: JsonObject);
     event ControlReady();
+    event MovePlayer(Position: JsonObject);
 }

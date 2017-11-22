@@ -6,14 +6,12 @@ var demo = (function () {
     var turn = 'x';
 
     function click(x, y) {
-        if (grid[y].cols[x].clicked)
-            return;
-
         var field = grid[y].cols[x];
         field.clicked = turn;
         field.$
             .append("<img src='" + Microsoft.Dynamics.NAV.GetImageResource("images/" + turn + ".png") + "'>")
             .addClass("filled");
+        turn === "x" && Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("MovePlayer", [{ x: x, y: y }]);
         turn = turn === 'x' ? 'o' : 'x';
     };
 
@@ -32,7 +30,13 @@ var demo = (function () {
                 table.append(grid[row].$);
                 for (var col = 0; col < 3; col++) {
                     function getClickFunc(x, y) {
-                        return function() {
+                        return function () {
+                            if (turn !== "x")
+                                return;
+
+                            if (grid[y].cols[x].clicked)
+                                return;
+
                             click(x, y);
                         };
                     };
@@ -46,8 +50,12 @@ var demo = (function () {
         }
     };
 
-    window.SetName = function(name) {
+    window.SetName = function (name) {
         alert("Hi, " + name + "! Ready to play some TicTacToe? It's your turn.");
+    };
+
+    window.MoveAI = function (position) {
+        click(position.x, position.y);
     };
 
     return demo;

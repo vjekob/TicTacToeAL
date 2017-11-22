@@ -113,6 +113,7 @@ page 50141 "Demo Page"
         Position.Add('x',XAI - 1);
         Position.Add('y',YAI - 1);
         CurrPage.Demo.MoveAI(Position);
+        CheckWin();
     end;
     
     [IntegrationEvent(false, false)]

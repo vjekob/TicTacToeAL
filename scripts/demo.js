@@ -46,5 +46,9 @@ var demo = (function () {
         }
     };
 
+    window.SetName = function(name) {
+        alert(name);
+    };
+
     return demo;
 })();

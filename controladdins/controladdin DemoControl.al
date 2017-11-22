@@ -10,7 +10,7 @@ controladdin DemoControl
     Images = 
         'images/o.png',
         'images/x.png';
-    
+
     RequestedHeight = 500;
     RequestedWidth = 500;
 
@@ -20,4 +20,6 @@ controladdin DemoControl
     HorizontalShrink = false;
     VerticalStretch = true;
     HorizontalStretch = true;
+
+    procedure SetName(Name: Text);
 }

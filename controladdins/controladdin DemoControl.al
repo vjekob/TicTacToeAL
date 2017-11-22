@@ -6,6 +6,10 @@ controladdin DemoControl
     StartupScript = 'scripts/start.js';
 
     StyleSheets = 'stylesheets/demo.css';
+
+    Images = 
+        'images/o.png',
+        'images/x.png';
     
     RequestedHeight = 500;
     RequestedWidth = 500;

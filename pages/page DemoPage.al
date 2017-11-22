@@ -6,6 +6,10 @@ page 50141 "Demo Page"
     {
         area(Content)
         {
+            usercontrol(Demo;DemoControl)
+            {
+                
+            }
         }
     }
 }

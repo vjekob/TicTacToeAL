@@ -12,10 +12,10 @@ codeunit 50141 GetAIMove
     procedure GetAIMove(Position: Array[3, 3] of Text; var X: Integer; var Y: Integer; var Handled: Boolean);
     var
         BestMove: Integer;
-    begin        
+    begin    
         if Handled then
             exit;
-            
+
         case DetermineMove(Position) of
             1: begin
                 BestMove := 1;
@@ -35,7 +35,9 @@ codeunit 50141 GetAIMove
             4: begin
                 If FindWinningMove('x') <> 0 then 
                     BestMove := FindWinningMove('x') 
-                else 
+                else if FindForkBlock('o') <> 0 then
+                    BestMove := FindForkBlock('o')
+                else
                     BestMove := FindNonCornerMove;
             end;
             5: begin
@@ -52,7 +54,8 @@ codeunit 50141 GetAIMove
                     BestMove := FindWinningMove('o') 
                 else if FindWinningMove('x') <> 0 then 
                     BestMove := FindWinningMove('x') 
-                else BestMove := FindNonCornerMove
+                else
+                    BestMove := FindNonCornerMove
             end;
             7: begin
                 If FindWinningMove('x') <> 0 then 
@@ -135,6 +138,26 @@ codeunit 50141 GetAIMove
                 exit(third);
             end;
         end;
+    end;
+
+    local procedure FindForkBlock(color: Text): Integer
+    var
+        oponent: Integer;
+
+    begin
+        if color = 'x' then
+            oponent := 5
+        else
+            oponent := 3;
+
+        if (Game[2] = oponent) and (Game[6] = oponent) then
+            exit(3);
+        if (Game[6] = oponent) and (Game[8] = oponent) then
+            exit(9);
+        if (Game[8] = oponent) and (Game[4] = oponent) then
+            exit(7);
+        if (Game[4] = oponent) and (Game[2] = oponent) then
+            exit(1);
     end;
 
     local procedure FindNonCornerMove() : Integer

@@ -13,6 +13,9 @@ codeunit 50141 GetAIMove
     var
         BestMove: Integer;
     begin        
+        if Handled then
+            exit;
+            
         case DetermineMove(Position) of
             1: begin
                 BestMove := 1;

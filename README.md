@@ -12,3 +12,6 @@ The first person who sends a pull request with a working plug in that applies th
 pattern gets a special gift from me. A standing ovation, credit on my blog, and mention at
 all of my sessions where I present this demo are in order, but you can also have a drink
 on me when we meet at a conference or something.
+
+(The contest is over, the winner is Bartel de Leeuw, but please keep contributing your ideas
+of how to make this demo better.)
